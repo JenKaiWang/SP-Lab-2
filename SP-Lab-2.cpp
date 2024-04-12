@@ -419,7 +419,7 @@ void printTopMSalaries(const char *filename) {
     }
 
     int count = 0, capacity = 10;
-    // ¦bC++¤¤¡A¥²¶·Åã¦¡Âà´«mallocªºªğ¦^Ãş«¬
+    // åœ¨C++ä¸­ï¼Œå¿…é ˆé¡¯å¼è½‰æ›mallocçš„è¿”å›é¡å‹
     Employee *employees = static_cast<Employee*>(malloc(capacity * sizeof(Employee)));
     if (employees == NULL) {
         perror("Memory allocation failed");
@@ -432,7 +432,7 @@ void printTopMSalaries(const char *filename) {
     while (fscanf(file, "%d,%63[^,],%63[^,],%d\n", &id, fname, lname, &salary) == 4) {
         if (count >= capacity) {
             capacity *= 2;
-            // ¦bC++¤¤¡A¥²¶·Åã¦¡Âà´«reallocªºªğ¦^Ãş«¬
+            // åœ¨C++ä¸­ï¼Œå¿…é ˆé¡¯å¼è½‰æ›reallocçš„è¿”å›é¡å‹
             Employee *newEmployees = static_cast<Employee*>(realloc(employees, capacity * sizeof(Employee)));
             if (newEmployees == NULL) {
                 perror("Memory reallocation failed");
@@ -547,19 +547,19 @@ int main(int argc, char *argv[]) {
             case 5:
                 printf("good bye!\n");
                 break;
-			case 6: 
-    			removeEmployee(filename);
-    			printf("(6) Remove an Employee\n");
-    			break;
-			case 7: 
-    			updateEmployee(filename);
-    			break;
-			case 8:
-    			printTopMSalaries(filename);
-   				break;
-   			case 9:
-        		findEmployeesByFirstName(filename);
-        		break;
+	    case 6: 
+    		removeEmployee(filename);
+    		printf("(6) Remove an Employee\n");
+    		break;
+	    case 7: 
+    		updateEmployee(filename);
+    		break;
+	    case 8:
+    		printTopMSalaries(filename);
+   		break;
+   	     case 9:
+        	findEmployeesByFirstName(filename);
+        	break;
             default:
                 printf("Invalid choice. Please try again.\n");
                 break;
